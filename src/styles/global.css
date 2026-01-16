@@ -1,5 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
 
+/* GT Alpina 2 Font */
+@font-face {
+  font-family: 'GT Alpina 2';
+  src: url('/fonts/GT Alpina 2/GT-Alpina-Standard-Light.woff2') format('woff2'),
+       url('/fonts/GT Alpina 2/GT-Alpina-Standard-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Alpina 2';
+  src: url('/fonts/GT Alpina 2/GT-Alpina-Standard-Regular.woff2') format('woff2'),
+       url('/fonts/GT Alpina 2/GT-Alpina-Standard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Alpina 2';
+  src: url('/fonts/GT Alpina 2/GT-Alpina-Standard-Medium.woff2') format('woff2'),
+       url('/fonts/GT Alpina 2/GT-Alpina-Standard-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Cleric Sans Font */
+@font-face {
+  font-family: 'Cleric Sans';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-300.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cleric Sans';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cleric Sans';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cleric Sans';
+  src: url('/fonts/ClericSans/Cleric Sans woff2/Cleric-Sans-Text-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,7 +76,7 @@
     @apply font-body text-body bg-white;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h3, h4, h5, h6 {
     @apply font-heading text-dark;
   }
 
@@ -24,7 +85,11 @@
   }
 
   h2 {
-    @apply text-h2-mobile tablet:text-h2-tablet desktop:text-h2-desktop;
+    font-family: 'GT Alpina 2', Georgia, serif;
+    font-size: 40px;
+    line-height: 115%;
+    letter-spacing: -0.02em;
+    @apply text-dark;
   }
 
   h3 {
@@ -40,7 +105,11 @@
   }
 
   .subtitle {
-    @apply text-subtitle-mobile tablet:text-subtitle-tablet desktop:text-subtitle-desktop;
+    font-family: 'Cleric Sans', system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    @apply text-muted;
   }
 
   .large-text {

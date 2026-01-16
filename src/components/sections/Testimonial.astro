@@ -1,42 +1,51 @@
 ---
 import Container from '../ui/Container.astro';
-import Button from '../ui/Button.astro';
 ---
 
-<section class="py-16 tablet:py-20 desktop:py-24 bg-light">
-  <Container size="md">
-    <div class="text-center fade-in-view">
-      <!-- Quote -->
-      <blockquote class="mb-8">
-        <p class="text-2xl tablet:text-3xl desktop:text-4xl font-heading text-dark leading-relaxed mb-8">
-          "I see Cleric functioning as an SRE companion for our Software Engineers. If one team has already solved an alert, we can apply that knowledge elsewhere."
-        </p>
-      </blockquote>
+<section class="py-16 tablet:py-20 desktop:py-24 bg-white">
+  <Container size="lg">
+    <div class="fade-in-view">
+      <!-- Testimonial Card -->
+      <a href="#case-study" class="block rounded-2xl overflow-hidden hover:shadow-md transition-shadow duration-300 group" style="background-color: #EAEAEA;">
+        <div class="flex flex-col tablet:flex-row">
+          <!-- Left: Image -->
+          <div class="tablet:w-[280px] desktop:w-[320px] flex-shrink-0">
+            <img
+              src="/images/homepage/section/maxime 1.png"
+              alt="Maxime - Head of Platform Engineering"
+              class="w-full h-full object-cover aspect-square tablet:aspect-auto"
+            />
+          </div>
 
-      <!-- Author -->
-      <div class="flex flex-col items-center gap-4">
-        <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-200">
-          <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=face"
-            alt="Customer photo"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="text-center">
-          <div class="font-semibold text-dark text-lg">BaltisCar</div>
-          <div class="text-muted text-sm">Head of Platform Engineering & Infrastructure Operations</div>
-        </div>
-      </div>
+          <!-- Right: Content -->
+          <div class="flex-1 p-6 tablet:p-8 desktop:p-10 flex flex-col justify-between">
+            <!-- Quote -->
+            <blockquote class="mb-6">
+              <p class="text-[30px] font-cleric-sans text-dark leading-tight">
+                "I see Cleric functioning as an SRE companion for our Software Engineers. If one team has already solved an alert, we can apply that knowledge elsewhere."
+              </p>
+            </blockquote>
 
-      <!-- CTA -->
-      <div class="mt-8">
-        <Button variant="outline" size="md" href="#case-study">
-          Read case study
-          <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
-        </Button>
-      </div>
+            <!-- Bottom Row: Author + CTA -->
+            <div class="flex flex-col tablet:flex-row tablet:items-end tablet:justify-between gap-4">
+              <!-- Author -->
+              <div>
+                <div class="text-[36px] font-cleric-sans text-dark mb-1">BlaBlaCar</div>
+                <div class="font-bold text-dark text-[18px]">Maxime Fouilleul</div>
+                <div class="text-dark text-[18px]">Head of Infrastructure & Operations | BlaBlaCar</div>
+              </div>
+
+              <!-- CTA Button -->
+              <span class="inline-flex items-center gap-2 px-5 py-2.5 bg-dark text-white text-sm font-medium rounded-full group-hover:bg-black transition-colors duration-300 whitespace-nowrap">
+                Read case study
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
     </div>
   </Container>
 </section>

@@ -6,15 +6,20 @@ export default {
       colors: {
         primary: '#2563EB',
         'primary-hover': '#1D4ED8',
+        secondary: '#C7D2FE',
+        'secondary-dark': '#A5B4FC',
         dark: '#111827',
         body: '#4B5563',
         muted: '#9CA3AF',
         light: '#F9FAFB',
         border: '#E5E7EB',
+        'gray-primary': '#EAEAEA',
       },
       fontFamily: {
         heading: ['Playfair Display', 'Georgia', 'serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        'gt-alpina': ['"GT Alpina 2"', 'Georgia', 'serif'],
+        'cleric-sans': ['"Cleric Sans"', 'system-ui', 'sans-serif'],
+        body: ['"Cleric Sans"', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         // H1

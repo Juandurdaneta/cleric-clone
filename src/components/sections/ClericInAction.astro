@@ -1,0 +1,114 @@
+---
+import Container from '../ui/Container.astro';
+---
+
+<section class="section-padding bg-white">
+  <Container>
+    <!-- Header -->
+    <div class="text-center max-w-4xl mx-auto mb-12 tablet:mb-16 fade-in-view">
+      <span class="inline-block px-3 py-1 mb-6 text-sm text-body bg-[#D1D5DB] rounded">
+        Cleric in action
+      </span>
+
+      <h2 class="mb-5">Things break. Cleric investigates.</h2>
+
+      <p class="subtitle">
+        While you're still reading the alert, Cleric's already three steps into the investigation.
+      </p>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="space-y-6 fade-in-view" style="animation-delay: 0.15s;">
+
+      <!-- Card 1: Skip straight to the answer -->
+      <div class="bg-[#F5F5F5] rounded-2xl overflow-hidden">
+        <div class="grid grid-cols-1 desktop:grid-cols-2 gap-8 p-8 tablet:p-12">
+          <!-- Text Content -->
+          <div class="flex flex-col justify-center order-2 desktop:order-1">
+            <h3 class="text-2xl tablet:text-3xl font-gt-alpina text-dark mb-4">
+              Skip straight to<br />the answer
+            </h3>
+            <p class="text-body text-base leading-relaxed max-w-md">
+              Cleric automatically investigates alerts and delivers root cause analysis so you know exactly what's wrong and whether to act.
+            </p>
+          </div>
+
+          <!-- Screenshot -->
+          <div class="order-1 desktop:order-2">
+            <img
+              src="/images/in action - img1.png"
+              alt="Cleric investigation showing Pagerduty alert and root cause analysis"
+              class="w-full h-auto rounded-lg "
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Trust but verify -->
+      <div class="bg-[#F5F5F5] rounded-2xl overflow-hidden">
+        <div class="grid grid-cols-1 desktop:grid-cols-2 gap-8 p-8 tablet:p-12">
+          <!-- Screenshot -->
+          <div class="order-1">
+            <img
+              src="/images/in action - img2.png"
+              alt="Investigation detail showing issue tracking and root cause detection"
+              class="w-full h-auto rounded-lg "
+            />
+          </div>
+
+          <!-- Text Content -->
+          <div class="flex flex-col justify-center order-2">
+            <h3 class="text-2xl tablet:text-3xl font-gt-alpina text-dark mb-4">
+              Trust but verify
+            </h3>
+            <p class="text-body text-base leading-relaxed max-w-md">
+              See exactly how Cleric reached its conclusions so you can trust the diagnosis and move to resolution.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Ship a fix -->
+      <div class="bg-[#F5F5F5] rounded-2xl overflow-hidden">
+        <div class="grid grid-cols-1 desktop:grid-cols-2 gap-8 p-8 tablet:p-12">
+          <!-- Text Content -->
+          <div class="flex flex-col justify-center order-2 desktop:order-1">
+            <h3 class="text-2xl tablet:text-3xl font-gt-alpina text-dark mb-4">
+              Ship a fix
+            </h3>
+            <p class="text-body text-base leading-relaxed max-w-md mb-6">
+              Work with Cleric to ship fixes by asking questions, giving instructions, and collaborating until the issue is resolved.
+            </p>
+            <!-- Slack badge -->
+            <div class="flex items-center gap-2 text-sm text-body">
+              <span>Works inside your</span>
+              <div class="flex items-center gap-1.5">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                  <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" fill="currentColor"/>
+                </svg>
+                <span class="font-medium">slack</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screenshot - Different for mobile/tablet vs desktop -->
+          <div class="order-1 desktop:order-2">
+            <!-- Mobile/Tablet image -->
+            <img
+              src="/images/in action - img4.png"
+              alt="Slack conversation with Cleric creating a PR"
+              class="w-full h-auto rounded-lg  desktop:hidden"
+            />
+            <!-- Desktop image -->
+            <img
+              src="/images/in action - img3.png"
+              alt="Slack conversation with Cleric creating a PR"
+              class="w-full h-auto rounded-lg  hidden desktop:block"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </Container>
+</section>

@@ -4,38 +4,30 @@ import Container from '../ui/Container.astro';
 const stats = [
   {
     value: '5 min',
-    label: 'Time to detect issues',
-    description: 'Average time to identify root cause'
+    label: 'Time to Root Cause'
   },
   {
     value: '92%',
-    label: 'Reduction in escalations',
-    description: 'Issues resolved without human intervention'
+    label: 'Actionable Findings'
   },
   {
     value: '200,000+',
-    label: 'Incidents investigated',
-    description: 'Across enterprise production environments'
+    label: 'Production-Grade Investigations'
   }
 ];
 ---
 
-<section class="py-12 tablet:py-16 desktop:py-20 bg-white border-y border-border">
+<section class="py-12 tablet:py-16 desktop:py-20 bg-white">
   <Container>
-    <div class="grid grid-cols-1 tablet:grid-cols-3 gap-8 tablet:gap-0 tablet:divide-x tablet:divide-border">
+    <div class="grid grid-cols-1 tablet:grid-cols-3 gap-8 tablet:gap-12">
       {stats.map((stat, index) => (
-        <div class="text-center px-4 tablet:px-8 fade-in-view" style={`animation-delay: ${index * 0.1}s`}>
-          <div class="inline-block">
-            <span class="block text-4xl tablet:text-5xl desktop:text-6xl font-heading text-dark font-semibold mb-2">
-              {stat.value}
-            </span>
-            <span class="block text-base tablet:text-lg font-medium text-dark mb-1">
-              {stat.label}
-            </span>
-            <span class="block text-sm text-muted">
-              {stat.description}
-            </span>
-          </div>
+        <div class="text-center fade-in-view" style={`animation-delay: ${index * 0.1}s`}>
+          <span class="block text-4xl tablet:text-5xl desktop:text-[56px] font-body font-medium text-dark mb-2">
+            {stat.value}
+          </span>
+          <span class="block text-sm tablet:text-base text-body">
+            {stat.label}
+          </span>
         </div>
       ))}
     </div>

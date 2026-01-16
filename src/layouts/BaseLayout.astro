@@ -76,20 +76,68 @@ const {
 
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
-        if (navbar) {
-          window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-              navbar.classList.add('nav-blur', 'shadow-sm');
-              navbar.classList.remove('bg-transparent');
-            } else {
-              navbar.classList.remove('nav-blur', 'shadow-sm');
-              navbar.classList.add('bg-transparent');
-            }
-          });
+        const navbarLogo = document.getElementById('navbar-logo');
+        const navbarLinks = document.getElementById('navbar-links');
+        const menuToggle = document.getElementById('menu-toggle');
+        const requestDemoBtn = document.getElementById('request-demo-btn');
+
+        function updateNavbar() {
+          if (!navbar) return;
+
+          const isScrolled = window.scrollY > 50;
+
+          if (isScrolled) {
+            // Scrolled: white background, dark text
+            navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+            navbar.dataset.transparent = 'false';
+
+            // Update logo color
+            navbarLogo?.classList.remove('text-white');
+            navbarLogo?.classList.add('text-dark');
+
+            // Update nav link colors (both <a> and <button> elements)
+            navbarLinks?.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('text-white/90', 'hover:text-white');
+              link.classList.add('text-body', 'hover:text-dark');
+            });
+
+            // Update Request Demo button
+            requestDemoBtn?.classList.remove('bg-white/20', 'text-white', 'border-white/30', 'hover:bg-white/30');
+            requestDemoBtn?.classList.add('bg-primary', 'text-white', 'border-primary', 'hover:bg-primary-hover');
+
+            // Update mobile menu toggle
+            menuToggle?.classList.remove('text-white', 'hover:bg-white/10');
+            menuToggle?.classList.add('text-dark', 'hover:bg-gray-100');
+          } else {
+            // At top: transparent background, white text
+            navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+            navbar.dataset.transparent = 'true';
+
+            // Update logo color
+            navbarLogo?.classList.remove('text-dark');
+            navbarLogo?.classList.add('text-white');
+
+            // Update nav link colors (both <a> and <button> elements)
+            navbarLinks?.querySelectorAll('.nav-link').forEach(link => {
+              link.classList.remove('text-body', 'hover:text-dark');
+              link.classList.add('text-white/90', 'hover:text-white');
+            });
+
+            // Update Request Demo button
+            requestDemoBtn?.classList.remove('bg-primary', 'border-primary', 'hover:bg-primary-hover');
+            requestDemoBtn?.classList.add('bg-white/20', 'text-white', 'border-white/30', 'hover:bg-white/30');
+
+            // Update mobile menu toggle
+            menuToggle?.classList.remove('text-dark', 'hover:bg-gray-100');
+            menuToggle?.classList.add('text-white', 'hover:bg-white/10');
+          }
         }
 
+        // Run on load and scroll
+        updateNavbar();
+        window.addEventListener('scroll', updateNavbar);
+
         // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuOverlay = document.getElementById('menu-overlay');
         const closeMenu = document.getElementById('close-menu');

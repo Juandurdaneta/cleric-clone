@@ -3,7 +3,7 @@ import Container from '../ui/Container.astro';
 import Button from '../ui/Button.astro';
 ---
 
-<section class="relative overflow-hidden bg-white pt-8 tablet:pt-12 desktop:pt-16 pb-0">
+<section class="relative overflow-hidden bg-white -mt-16 desktop:-mt-[72px] pt-24 tablet:pt-28 desktop:pt-32 pb-0">
   <!-- Mountain/Cloud Background Image - covers full section -->
   <div class="absolute inset-0 pointer-events-none">
     <img
@@ -16,16 +16,16 @@ import Button from '../ui/Button.astro';
   <Container class="relative z-10">
     <div class="text-center max-w-4xl mx-auto fade-in-view">
       <!-- Badge -->
-      <a href="#press" class="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 transition-colors">
-        <span class="px-3 py-1 bg-white rounded-full text-dark text-sm font-medium">Press release</span>
-        <span class="text-white/90 text-sm">Cleric launches the first self-learning AI SRE</span>
-        <svg class="w-4 h-4 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17" />
+      <a href="#press" class="inline-flex items-center gap-3 mb-6 px-2 py-2 bg-black/10 backdrop-blur-sm rounded-xl hover:bg-black/15 transition-colors">
+        <span class="px-4 py-1.5 bg-[#C7D2FE] rounded text-dark text-sm font-medium">Press release</span>
+        <span class="text-white font-extralight text-sm tracking-wide">Cleric launches the first self-learning AI SRE</span>
+        <svg class="w-4 h-4 text-white/80 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
         </svg>
       </a>
 
       <!-- Heading -->
-      <h1 class="mb-6 text-white">
+      <h1 class="mb-6 text-white font-gt-alpina">
         <span class="block whitespace-nowrap">The AI SRE That Learns</span>
         <span class="block">From Your Engineers</span>
       </h1>
@@ -47,29 +47,29 @@ import Button from '../ui/Button.astro';
     </div>
 
     <!-- Product Screenshots -->
-    <div class="relative mx-auto max-w-6xl fade-in-view" style="animation-delay: 0.2s;">
-      <!-- Desktop: Two screenshots side by side -->
-      <div class="hidden tablet:flex items-start justify-center gap-4 relative">
-        <!-- Web UI Screenshot -->
-        <div class="relative flex-1 max-w-[65%]">
+    <div class="relative mx-auto max-w-6xl fade-in-view px-4" style="animation-delay: 0.2s;">
+      <!-- Desktop: Web UI with Slack overlay -->
+      <div class="hidden tablet:block relative">
+        <!-- Web UI Screenshot (main, wider) -->
+        <div class="relative">
           <img
             src="/images/hero - web ui.png"
             alt="Cleric Web UI showing investigation dashboard"
-            class="w-full h-auto rounded-xl shadow-2xl"
+            class="w-full h-auto rounded-2xl shadow-xl"
           />
         </div>
-        <!-- Slack Screenshot -->
-        <div class="relative flex-shrink-0 w-[280px] mt-12">
+        <!-- Slack Screenshot (overlaid on bottom-right) -->
+        <div class="absolute bottom-0 -right-8 desktop:-right-12 w-[300px] desktop:w-[340px]">
           <img
             src="/images/hero - slack.png"
             alt="Cleric Slack integration"
-            class="w-full h-auto rounded-xl shadow-2xl"
+            class="w-full h-auto rounded-2xl shadow-2xl"
           />
         </div>
       </div>
 
       <!-- Mobile: Single Slack screenshot -->
-      <div class="tablet:hidden flex justify-center px-4">
+      <div class="tablet:hidden flex justify-center mt-24">
         <img
           src="/images/hero - slack - mobile.png"
           alt="Cleric Slack integration on mobile"
@@ -80,5 +80,5 @@ import Button from '../ui/Button.astro';
   </Container>
 
   <!-- Gradient fade to white -->
-  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none z-20"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white to-transparent pointer-events-none z-20"></div>
 </section>
