@@ -6,62 +6,66 @@ import Container from '../ui/Container.astro';
   <Container>
     <!-- Header -->
     <div class="text-center max-w-4xl mx-auto mb-12 tablet:mb-16 fade-in-view">
-      <span class="inline-block px-3 py-1 mb-6 text-sm text-body bg-[#D1D5DB] rounded">
+      <span class="inline-block px-3 py-1 mb-6 text-sm text-body bg-[#EAEAEA] rounded">
         Cleric in action
       </span>
 
-      <h2 class="mb-5">Things break. Cleric investigates.</h2>
+      <h2 class="mb-2">Things break. Cleric investigates.</h2>
 
-      <p class="subtitle">
+      <p class="subtitle text-[#6B6B6B]">
         While you're still reading the alert, Cleric's already three steps into the investigation.
       </p>
     </div>
 
     <!-- Feature Cards -->
-    <div class="space-y-6 fade-in-view" style="animation-delay: 0.15s;">
+    <div class="space-y-12 fade-in-view" style="animation-delay: 0.15s;">
 
       <!-- Card 1: Skip straight to the answer -->
-      <div class="bg-[#F5F5F5] rounded-2xl overflow-hidden">
-        <div class="grid grid-cols-1 desktop:grid-cols-2 gap-8 p-8 tablet:p-12">
+      <div class="bg-[#F5F5F5] rounded-2xl overflow-hidden h-auto desktop:h-[640px]">
+        <div class="grid grid-cols-1 desktop:grid-cols-2 gap-8 p-8 tablet:p-12 h-full">
           <!-- Text Content -->
           <div class="flex flex-col justify-center order-2 desktop:order-1">
-            <h3 class="text-2xl tablet:text-3xl font-gt-alpina text-dark mb-4">
+            <h3 class="mb-4">
               Skip straight to<br />the answer
             </h3>
-            <p class="text-body text-base leading-relaxed max-w-md">
+            <p class="text-body font-cleric-sans text-[18px] leading-[140%] w-[400px]">
               Cleric automatically investigates alerts and delivers root cause analysis so you know exactly what's wrong and whether to act.
             </p>
           </div>
 
           <!-- Screenshot -->
-          <div class="order-1 desktop:order-2">
+          <div class="order-1 desktop:order-2 relative">
             <img
               src="/images/in action - img1.png"
               alt="Cleric investigation showing Pagerduty alert and root cause analysis"
-              class="w-full h-auto rounded-lg "
+              class="w-full h-auto rounded-lg"
             />
+            <!-- Fade out gradient at bottom -->
+            <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F5F5F5] to-transparent rounded-b-lg"></div>
           </div>
         </div>
       </div>
 
       <!-- Card 2: Trust but verify -->
-      <div class="bg-[#F5F5F5] rounded-2xl overflow-hidden">
-        <div class="grid grid-cols-1 desktop:grid-cols-2 gap-8 p-8 tablet:p-12">
+      <div class="bg-[#F5F5F5] rounded-2xl overflow-hidden h-auto desktop:h-[600px]">
+        <div class="grid grid-cols-1 desktop:grid-cols-2 gap-8 p-8 tablet:p-12 h-full">
           <!-- Screenshot -->
-          <div class="order-1">
+          <div class="order-1 relative">
             <img
               src="/images/in action - img2.png"
               alt="Investigation detail showing issue tracking and root cause detection"
-              class="w-full h-auto rounded-lg "
+              class="w-full h-auto rounded-lg"
             />
+            <!-- Fade out gradient on left -->
+            <div class="absolute top-0 left-0 bottom-0 w-24 bg-gradient-to-r from-[#F5F5F5] to-transparent rounded-l-lg"></div>
           </div>
 
           <!-- Text Content -->
           <div class="flex flex-col justify-center order-2">
-            <h3 class="text-2xl tablet:text-3xl font-gt-alpina text-dark mb-4">
+            <h3 class="mb-4">
               Trust but verify
             </h3>
-            <p class="text-body text-base leading-relaxed max-w-md">
+            <p class="text-body font-cleric-sans text-[18px] leading-[140%] w-[400px]">
               See exactly how Cleric reached its conclusions so you can trust the diagnosis and move to resolution.
             </p>
           </div>
@@ -69,14 +73,14 @@ import Container from '../ui/Container.astro';
       </div>
 
       <!-- Card 3: Ship a fix -->
-      <div class="bg-[#F5F5F5] rounded-2xl overflow-hidden">
-        <div class="grid grid-cols-1 desktop:grid-cols-2 gap-8 p-8 tablet:p-12">
+      <div class="bg-[#F5F5F5] rounded-2xl overflow-hidden h-auto desktop:h-[600px]">
+        <div class="grid grid-cols-1 desktop:grid-cols-2 gap-8 p-8 tablet:p-12 h-full">
           <!-- Text Content -->
           <div class="flex flex-col justify-center order-2 desktop:order-1">
-            <h3 class="text-2xl tablet:text-3xl font-gt-alpina text-dark mb-4">
+            <h3 class="mb-4">
               Ship a fix
             </h3>
-            <p class="text-body text-base leading-relaxed max-w-md mb-6">
+            <p class="text-body font-cleric-sans text-[18px] leading-[140%] w-[400px] mb-6">
               Work with Cleric to ship fixes by asking questions, giving instructions, and collaborating until the issue is resolved.
             </p>
             <!-- Slack badge -->
@@ -92,12 +96,12 @@ import Container from '../ui/Container.astro';
           </div>
 
           <!-- Screenshot - Different for mobile/tablet vs desktop -->
-          <div class="order-1 desktop:order-2">
+          <div class="order-1 desktop:order-2 relative">
             <!-- Mobile/Tablet image -->
             <img
               src="/images/in action - img4.png"
               alt="Slack conversation with Cleric creating a PR"
-              class="w-full h-auto rounded-lg  desktop:hidden"
+              class="w-full h-auto rounded-lg desktop:hidden"
             />
             <!-- Desktop image -->
             <img
@@ -105,6 +109,34 @@ import Container from '../ui/Container.astro';
               alt="Slack conversation with Cleric creating a PR"
               class="w-full h-auto rounded-lg  hidden desktop:block"
             />
+            <!-- Fade out gradient on right -->
+            <div class="absolute top-0 right-0 bottom-0 w-24 bg-gradient-to-l from-[#F5F5F5] to-transparent rounded-r-lg"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Learns from failure -->
+      <div class="bg-[#F5F5F5] rounded-2xl overflow-hidden h-auto desktop:h-[600px]">
+        <div class="grid grid-cols-1 desktop:grid-cols-2 gap-8 p-8 tablet:p-12 h-full">
+          <!-- Screenshot -->
+          <div class="order-1 relative">
+            <img
+              src="/images/in action - img4.png"
+              alt="Slack thread showing Cleric merging a PR and saving memory"
+              class="w-full h-auto rounded-lg"
+            />
+            <!-- Fade out gradient on left -->
+            <div class="absolute top-0 left-0 bottom-0 w-24 bg-gradient-to-r from-[#F5F5F5] to-transparent rounded-l-lg"></div>
+          </div>
+
+          <!-- Text Content -->
+          <div class="flex flex-col justify-center order-2">
+            <h3 class="mb-4">
+              Learns from failure
+            </h3>
+            <p class="text-body font-cleric-sans text-[18px] leading-[140%] w-[400px]">
+              Engineers leave, context doesn't. Every resolution becomes institutional knowledge your whole team can use.
+            </p>
           </div>
         </div>
       </div>

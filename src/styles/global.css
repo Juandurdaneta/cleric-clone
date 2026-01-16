@@ -93,7 +93,10 @@
   }
 
   h3 {
-    @apply text-h3-mobile tablet:text-h3-tablet desktop:text-h3-desktop;
+    font-family: 'GT Alpina 2', Georgia, serif;
+    font-size: 40px;
+    line-height: 120%;
+    @apply text-dark;
   }
 
   h4 {
