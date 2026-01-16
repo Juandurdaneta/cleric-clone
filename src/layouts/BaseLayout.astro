@@ -1,0 +1,156 @@
+---
+import Navbar from '../components/layout/Navbar.astro';
+import Footer from '../components/layout/Footer.astro';
+import TryItOutWizard from '../components/forms/TryItOutWizard';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Cleric - The AI SRE That Learns From Your Engineers",
+  description = "Cleric is an AI-powered Site Reliability Engineer that learns from your team, diagnoses issues, and investigates incidents automatically."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Cleric" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/images/og-image.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Navbar />
+
+    <main class="flex-1">
+      <slot />
+    </main>
+    
+    <Footer />
+    
+    <!-- Try It Out Modal (React Component) -->
+    <TryItOutWizard client:load />
+    
+    <script>
+      // Intersection Observer for fade-in animations
+      document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-view').forEach(el => {
+          observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+              navbar.classList.add('nav-blur', 'shadow-sm');
+              navbar.classList.remove('bg-transparent');
+            } else {
+              navbar.classList.remove('nav-blur', 'shadow-sm');
+              navbar.classList.add('bg-transparent');
+            }
+          });
+        }
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const closeMenu = document.getElementById('close-menu');
+
+        function openMobileMenu() {
+          mobileMenu?.classList.remove('translate-x-full');
+          menuOverlay?.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+          mobileMenu?.classList.add('translate-x-full');
+          menuOverlay?.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+
+        menuToggle?.addEventListener('click', openMobileMenu);
+        closeMenu?.addEventListener('click', closeMobileMenu);
+        menuOverlay?.addEventListener('click', closeMobileMenu);
+
+        // Close menu on link click
+        mobileMenu?.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Announcement banner dismiss
+        const dismissBanner = document.getElementById('dismiss-banner');
+        const banner = document.getElementById('announcement-banner');
+        
+        dismissBanner?.addEventListener('click', () => {
+          banner?.classList.add('hidden');
+        });
+
+        // Modal handling
+        window.openTryItOutModal = () => {
+          const modal = document.getElementById('try-it-out-modal');
+          modal?.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        };
+
+        window.closeTryItOutModal = () => {
+          const modal = document.getElementById('try-it-out-modal');
+          modal?.classList.add('hidden');
+          document.body.style.overflow = '';
+        };
+
+        // Close modal on backdrop click
+        document.getElementById('try-it-out-modal')?.addEventListener('click', (e) => {
+          if (e.target === e.currentTarget) {
+            window.closeTryItOutModal();
+          }
+        });
+
+        // Close modal on escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            window.closeTryItOutModal();
+            closeMobileMenu();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

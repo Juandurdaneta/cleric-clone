@@ -1,0 +1,184 @@
+---
+import Container from '../ui/Container.astro';
+import Badge from '../ui/Badge.astro';
+
+const features = [
+  {
+    title: 'Skip straight to the answer',
+    description: 'No more digging through logs or guessing at causes. Cleric analyzes signals across your entire stack and delivers actionable insights in minutes, not hours.',
+    imagePosition: 'right',
+    color: 'blue'
+  },
+  {
+    title: 'Trust but verify',
+    description: 'Every diagnosis comes with a complete audit trail. See exactly what Cleric checked, what it found, and why it reached its conclusions. Full transparency, always.',
+    imagePosition: 'left',
+    color: 'green'
+  },
+  {
+    title: 'Ship a fix',
+    description: 'Cleric doesn\'t just identify problems—it suggests solutions. Get recommended fixes based on your codebase patterns and past successful resolutions.',
+    imagePosition: 'right',
+    color: 'purple'
+  },
+  {
+    title: 'Learns from failure',
+    description: 'Every incident makes Cleric smarter. It builds a knowledge graph of your systems, learning failure patterns and improving its diagnostic accuracy over time.',
+    imagePosition: 'left',
+    color: 'orange'
+  }
+];
+
+const colorClasses = {
+  blue: { bg: 'bg-blue-50', accent: 'bg-primary', icon: 'text-primary' },
+  green: { bg: 'bg-green-50', accent: 'bg-green-500', icon: 'text-green-500' },
+  purple: { bg: 'bg-purple-50', accent: 'bg-purple-500', icon: 'text-purple-500' },
+  orange: { bg: 'bg-orange-50', accent: 'bg-orange-500', icon: 'text-orange-500' }
+};
+---
+
+<!-- Dark Header Section -->
+<section class="py-16 tablet:py-20 desktop:py-24 bg-dark">
+  <Container>
+    <div class="text-center max-w-3xl mx-auto fade-in-view">
+      <Badge variant="dark" class="mb-4 bg-white/10 border-white/20 text-white">CLERIC INSIGHTS</Badge>
+      <h2 class="mb-4 text-white">Things break. Cleric investigates.</h2>
+      <p class="subtitle text-white/70">
+        While you're still reading the alert, Cleric is already three steps into the investigation.
+      </p>
+    </div>
+  </Container>
+</section>
+
+<!-- Feature Rows -->
+<section class="section-padding bg-white">
+  <Container>
+    <div class="space-y-16 tablet:space-y-24">
+      {features.map((feature, index) => (
+        <div
+          class={`flex flex-col ${feature.imagePosition === 'left' ? 'desktop:flex-row-reverse' : 'desktop:flex-row'} items-center gap-8 desktop:gap-16 fade-in-view`}
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <!-- Text Content -->
+          <div class="flex-1 text-center desktop:text-left">
+            <h3 class="mb-4">{feature.title}</h3>
+            <p class="large-text text-body">{feature.description}</p>
+          </div>
+
+          <!-- Image/Mockup -->
+          <div class="flex-1 w-full">
+            <div class={`${colorClasses[feature.color].bg} rounded-2xl p-6 tablet:p-8 border border-border`}>
+              <!-- Mockup UI -->
+              <div class="bg-white rounded-xl shadow-sm border border-border overflow-hidden">
+                <!-- Header -->
+                <div class="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-border">
+                  <div class="flex gap-1.5">
+                    <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                    <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <div class="p-4 tablet:p-6 space-y-4">
+                  {feature.color === 'blue' && (
+                    <>
+                      <div class="flex items-start gap-3">
+                        <div class={`w-8 h-8 ${colorClasses[feature.color].accent} rounded-full flex-shrink-0 flex items-center justify-center`}>
+                          <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                          </svg>
+                        </div>
+                        <div class="flex-1">
+                          <div class="text-sm font-medium text-dark mb-1">Hypothesis</div>
+                          <div class="text-xs text-muted">CPU spike matches high memory usage</div>
+                        </div>
+                      </div>
+                      <div class="ml-11 p-3 bg-blue-50 rounded-lg border border-blue-100">
+                        <p class="text-sm text-dark font-medium">Root cause: Memory leak in auth-service</p>
+                        <p class="text-xs text-muted mt-1">Confidence: 94%</p>
+                      </div>
+                      <div class="ml-11 text-xs text-muted">
+                        The high error rate was due to the database on bare metal capacity
+                      </div>
+                    </>
+                  )}
+
+                  {feature.color === 'green' && (
+                    <>
+                      <div class="space-y-2">
+                        <div class="flex items-center gap-2">
+                          <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span class="text-sm text-body">Checked API response times</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span class="text-sm text-body">Queried database metrics</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span class="text-sm text-body">Traced service dependencies</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                          <svg class="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span class="text-sm text-body">Reviewed recent deployments</span>
+                        </div>
+                      </div>
+                    </>
+                  )}
+
+                  {feature.color === 'purple' && (
+                    <>
+                      <div class="p-3 bg-purple-50 rounded-lg border border-purple-100">
+                        <p class="text-sm font-medium text-dark mb-2">Recommended Fix</p>
+                        <code class="text-xs bg-purple-100 px-2 py-1 rounded block overflow-x-auto">
+                          kubectl rollout restart deployment/auth-service
+                        </code>
+                      </div>
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm text-muted">Similar fix resolved 12 past incidents</span>
+                        <button class="px-3 py-1.5 bg-purple-500 text-white text-sm rounded-lg">Apply</button>
+                      </div>
+                    </>
+                  )}
+
+                  {feature.color === 'orange' && (
+                    <>
+                      <div class="space-y-3">
+                        <div class="flex items-center gap-2 text-sm">
+                          <div class="w-6 h-6 bg-primary rounded flex items-center justify-center">
+                            <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                          </div>
+                          <span class="text-dark font-medium">Cleric</span>
+                        </div>
+                        <div class="p-3 bg-orange-50 rounded-lg border border-orange-100">
+                          <p class="text-sm text-dark">This looks similar to an issue resolved <span class="font-semibold">398 times</span>.</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs text-muted">
+                          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span>Learning from past incidents</span>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </Container>
+</section>

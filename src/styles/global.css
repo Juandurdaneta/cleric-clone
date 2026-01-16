@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body text-body bg-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-dark;
+  }
+
+  h1 {
+    @apply text-h1-mobile tablet:text-h1-tablet desktop:text-h1-desktop;
+  }
+
+  h2 {
+    @apply text-h2-mobile tablet:text-h2-tablet desktop:text-h2-desktop;
+  }
+
+  h3 {
+    @apply text-h3-mobile tablet:text-h3-tablet desktop:text-h3-desktop;
+  }
+
+  h4 {
+    @apply text-h4-mobile tablet:text-h4-tablet desktop:text-h4-desktop;
+  }
+
+  p {
+    @apply text-medium-mobile tablet:text-medium-tablet desktop:text-medium-desktop;
+  }
+
+  .subtitle {
+    @apply text-subtitle-mobile tablet:text-subtitle-tablet desktop:text-subtitle-desktop;
+  }
+
+  .large-text {
+    @apply text-large-mobile tablet:text-large-tablet desktop:text-large-desktop;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 tablet:py-20 desktop:py-24;
+  }
+
+  .fade-in-view {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-view.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gradient-dark {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 50%, #111827 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%);
+  }
+
+  .nav-blur {
+    @apply backdrop-blur-md bg-white/90;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Focus styles */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-50;
+}
+
+/* Form input styles */
+input, select, textarea {
+  @apply font-body;
+}
+
+input:focus, select:focus, textarea:focus {
+  @apply outline-none ring-2 ring-primary ring-offset-2;
+}

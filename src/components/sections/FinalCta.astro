@@ -1,0 +1,62 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section class="relative py-20 tablet:py-28 desktop:py-32 overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <!-- Desktop background -->
+    <div class="hidden tablet:block absolute inset-0 bg-dark">
+      <img
+        src="/images/CTA bg - tablet.png"
+        alt=""
+        class="w-full h-full object-cover opacity-50"
+      />
+    </div>
+    <!-- Mobile background -->
+    <div class="tablet:hidden absolute inset-0 bg-dark">
+      <img
+        src="/images/CTA bg - mobile.png"
+        alt=""
+        class="w-full h-full object-cover opacity-50"
+      />
+    </div>
+  </div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-dark/80"></div>
+
+  <Container class="relative z-10">
+    <div class="text-center max-w-3xl mx-auto fade-in-view">
+      <!-- Heading -->
+      <h2 class="text-white mb-6">
+        Unblock your engineers.<br />Start in minutes.
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="subtitle text-gray-300 mb-10 max-w-2xl mx-auto">
+        Setup takes minutes. Results hit by default.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col tablet:flex-row items-center justify-center gap-4">
+        <Button
+          variant="primary"
+          size="lg"
+          onclick="window.openTryItOutModal()"
+        >
+          Start for free
+        </Button>
+        <Button
+          variant="outline"
+          size="lg"
+          href="#demo"
+          class="border-white text-white hover:bg-white hover:text-dark"
+        >
+          Request Demo
+        </Button>
+      </div>
+    </div>
+  </Container>
+</section>

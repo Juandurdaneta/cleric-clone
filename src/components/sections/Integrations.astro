@@ -1,0 +1,60 @@
+---
+import Container from '../ui/Container.astro';
+import Badge from '../ui/Badge.astro';
+
+// Integration logos represented as simple icons/placeholders
+const integrations = [
+  { name: 'Datadog', color: '#632CA6' },
+  { name: 'PagerDuty', color: '#06AC38' },
+  { name: 'Opsgenie', color: '#0052CC' },
+  { name: 'Slack', color: '#4A154B' },
+  { name: 'Jira', color: '#0052CC' },
+  { name: 'GitHub', color: '#181717' },
+  { name: 'AWS', color: '#FF9900' },
+  { name: 'GCP', color: '#4285F4' },
+  { name: 'Kubernetes', color: '#326CE5' },
+  { name: 'Grafana', color: '#F46800' },
+];
+---
+
+<section class="section-padding bg-light">
+  <Container>
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto mb-12 fade-in-view">
+      <Badge variant="default" class="mb-4">INTEGRATIONS</Badge>
+      <h2 class="mb-4">Built to plug right into your stack</h2>
+      <p class="subtitle text-body">
+        Connect your alerting, incident, and metrics tools to get value on day one.
+      </p>
+    </div>
+
+    <!-- Logo Grid -->
+    <div class="fade-in-view" style="animation-delay: 0.1s;">
+      <div class="flex flex-wrap justify-center items-center gap-6 tablet:gap-8">
+        {integrations.map((integration) => (
+          <div
+            class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow"
+          >
+            <div
+              class="w-8 h-8 tablet:w-10 tablet:h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs"
+              style={`background-color: ${integration.color}`}
+            >
+              {integration.name.charAt(0)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Additional Info -->
+    <div class="mt-12 text-center fade-in-view" style="animation-delay: 0.2s;">
+      <p class="text-muted mb-4">Don't see a tool you need?</p>
+      <a href="#integrations" class="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-medium transition-colors">
+        Request an integration
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </Container>
+</section>

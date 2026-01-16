@@ -1,0 +1,84 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section class="relative overflow-hidden bg-white pt-8 tablet:pt-12 desktop:pt-16 pb-0">
+  <!-- Mountain/Cloud Background Image - covers full section -->
+  <div class="absolute inset-0 pointer-events-none">
+    <img
+      src="/images/hero_bg.png"
+      alt=""
+      class="w-full h-full object-cover object-bottom"
+    />
+  </div>
+
+  <Container class="relative z-10">
+    <div class="text-center max-w-4xl mx-auto fade-in-view">
+      <!-- Badge -->
+      <a href="#press" class="inline-flex items-center gap-3 mb-6 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 hover:bg-white/20 transition-colors">
+        <span class="px-3 py-1 bg-white rounded-full text-dark text-sm font-medium">Press release</span>
+        <span class="text-white/90 text-sm">Cleric launches the first self-learning AI SRE</span>
+        <svg class="w-4 h-4 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17" />
+        </svg>
+      </a>
+
+      <!-- Heading -->
+      <h1 class="mb-6 text-white">
+        <span class="block whitespace-nowrap">The AI SRE That Learns</span>
+        <span class="block">From Your Engineers</span>
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="subtitle text-white/90 max-w-2xl mx-auto mb-8">
+        Cleric investigates production issues, captures what works, and makes your whole team faster.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col tablet:flex-row items-center justify-center gap-4 mb-12 tablet:mb-16">
+        <Button variant="primary" size="lg" onclick="window.openTryItOutModal()">
+          Start for free
+        </Button>
+        <Button variant="outline" size="lg" href="#demo" class="!border-white !text-white hover:!bg-white hover:!text-dark">
+          Request Demo
+        </Button>
+      </div>
+    </div>
+
+    <!-- Product Screenshots -->
+    <div class="relative mx-auto max-w-6xl fade-in-view" style="animation-delay: 0.2s;">
+      <!-- Desktop: Two screenshots side by side -->
+      <div class="hidden tablet:flex items-start justify-center gap-4 relative">
+        <!-- Web UI Screenshot -->
+        <div class="relative flex-1 max-w-[65%]">
+          <img
+            src="/images/hero - web ui.png"
+            alt="Cleric Web UI showing investigation dashboard"
+            class="w-full h-auto rounded-xl shadow-2xl"
+          />
+        </div>
+        <!-- Slack Screenshot -->
+        <div class="relative flex-shrink-0 w-[280px] mt-12">
+          <img
+            src="/images/hero - slack.png"
+            alt="Cleric Slack integration"
+            class="w-full h-auto rounded-xl shadow-2xl"
+          />
+        </div>
+      </div>
+
+      <!-- Mobile: Single Slack screenshot -->
+      <div class="tablet:hidden flex justify-center px-4">
+        <img
+          src="/images/hero - slack - mobile.png"
+          alt="Cleric Slack integration on mobile"
+          class="w-full max-w-sm h-auto rounded-xl shadow-2xl"
+        />
+      </div>
+    </div>
+  </Container>
+
+  <!-- Gradient fade to white -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none z-20"></div>
+</section>

@@ -1,0 +1,42 @@
+---
+import Container from '../ui/Container.astro';
+import Button from '../ui/Button.astro';
+---
+
+<section class="py-16 tablet:py-20 desktop:py-24 bg-light">
+  <Container size="md">
+    <div class="text-center fade-in-view">
+      <!-- Quote -->
+      <blockquote class="mb-8">
+        <p class="text-2xl tablet:text-3xl desktop:text-4xl font-heading text-dark leading-relaxed mb-8">
+          "I see Cleric functioning as an SRE companion for our Software Engineers. If one team has already solved an alert, we can apply that knowledge elsewhere."
+        </p>
+      </blockquote>
+
+      <!-- Author -->
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-200">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=face"
+            alt="Customer photo"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="text-center">
+          <div class="font-semibold text-dark text-lg">BaltisCar</div>
+          <div class="text-muted text-sm">Head of Platform Engineering & Infrastructure Operations</div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-8">
+        <Button variant="outline" size="md" href="#case-study">
+          Read case study
+          <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </Button>
+      </div>
+    </div>
+  </Container>
+</section>
