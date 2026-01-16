@@ -19,9 +19,9 @@ import Container from '../ui/Container.astro';
     </div>
 
     <!-- Logo Grid -->
-    <div class="fade-in-view max-w-4xl mx-auto" style="animation-delay: 0.1s;">
-      <!-- Row 1 - 8 icons -->
-      <div class="flex flex-wrap justify-center items-center gap-4 tablet:gap-5 mb-4 tablet:mb-5">
+    <div class="fade-in-view" style="animation-delay: 0.1s;">
+      <!-- Row 1 - 9 icons -->
+      <div class="flex justify-center items-center gap-4 tablet:gap-6 desktop:gap-10 mb-4 tablet:mb-6">
         <!-- Kubernetes -->
         <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
           <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
@@ -76,6 +76,16 @@ import Container from '../ui/Container.astro';
           </svg>
         </div>
 
+        <!-- Figma dots -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <circle cx="10" cy="10" r="3.5" fill="#F24E1E"/>
+            <circle cx="22" cy="10" r="3.5" fill="#0ACF83"/>
+            <circle cx="10" cy="22" r="3.5" fill="#A259FF"/>
+            <circle cx="22" cy="22" r="3.5" fill="#1ABCFE"/>
+          </svg>
+        </div>
+
         <!-- Mint/Green app -->
         <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
           <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
@@ -92,8 +102,8 @@ import Container from '../ui/Container.astro';
         </div>
       </div>
 
-      <!-- Row 2 - 7 icons, offset for zigzag effect -->
-      <div class="flex flex-wrap justify-center items-center gap-4 tablet:gap-5 tablet:px-12">
+      <!-- Row 2 - 8 icons, offset for zigzag effect -->
+      <div class="flex justify-center items-center gap-4 tablet:gap-6 desktop:gap-10">
         <!-- GitLab -->
         <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
           <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
@@ -137,12 +147,18 @@ import Container from '../ui/Container.astro';
           </svg>
         </div>
 
+        <!-- Jira X -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <path d="M8 16l8-8 8 8-8 8-8-8z" fill="#2684FF"/>
+          </svg>
+        </div>
+
         <!-- Alchemy/Purple -->
         <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
           <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
-            <rect x="4" y="4" width="24" height="24" rx="4" fill="#8B5CF6" fill-opacity="0.1"/>
-            <path d="M10 22L16 10l6 12H10z" stroke="#8B5CF6" stroke-width="2" fill="none"/>
-            <circle cx="16" cy="18" r="2" fill="#8B5CF6"/>
+            <path d="M16 6l8 14H8l8-14z" fill="#A78BFA" fill-opacity="0.3" stroke="#8B5CF6" stroke-width="1.5"/>
+            <circle cx="16" cy="14" r="2" fill="#8B5CF6"/>
           </svg>
         </div>
 
