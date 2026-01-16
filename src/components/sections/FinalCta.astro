@@ -1,61 +1,58 @@
 ---
 import Container from '../ui/Container.astro';
-import Button from '../ui/Button.astro';
 ---
 
-<section class="relative py-20 tablet:py-28 desktop:py-32 overflow-hidden">
-  <!-- Background Image -->
-  <div class="absolute inset-0">
-    <!-- Desktop background -->
-    <div class="hidden tablet:block absolute inset-0 bg-dark">
-      <img
-        src="/images/CTA bg - tablet.png"
-        alt=""
-        class="w-full h-full object-cover opacity-50"
-      />
-    </div>
-    <!-- Mobile background -->
-    <div class="tablet:hidden absolute inset-0 bg-dark">
-      <img
-        src="/images/CTA bg - mobile.png"
-        alt=""
-        class="w-full h-full object-cover opacity-50"
-      />
-    </div>
-  </div>
+<section class="py-16 tablet:py-20 desktop:py-24 bg-white">
+  <Container>
+    <div class="fade-in-view">
+      <!-- CTA Card -->
+      <div class="relative rounded-3xl overflow-hidden min-h-[400px] tablet:min-h-[450px]">
+        <!-- Background Image -->
+        <!-- Desktop -->
+        <div
+          class="absolute inset-0 hidden desktop:block"
+          style="background-image: url('/images/Blanka_blue_sky_with_fluffy_clouds_and_crystal_island_--chaos_1_e97fb062-de1f-45a1-84fe-77ff73f0827c 4.png'); background-size: cover; background-position: center;"
+        ></div>
+        <!-- Tablet -->
+        <div
+          class="absolute inset-0 hidden tablet:block desktop:hidden"
+          style="background-image: url('/images/CTA bg - tablet.png'); background-size: cover; background-position: center;"
+        ></div>
+        <!-- Mobile -->
+        <div
+          class="absolute inset-0 tablet:hidden"
+          style="background-image: url('/images/CTA bg - mobile.png'); background-size: cover; background-position: center;"
+        ></div>
 
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-dark/80"></div>
+        <!-- Content -->
+        <div class="relative z-10 h-full flex flex-col justify-center p-8 tablet:p-12 desktop:p-16 max-w-2xl">
+          <!-- Heading -->
+          <h2 class="text-white font-gt-alpina font-medium text-[48px] mb-4 whitespace-nowrap" style="line-height: 115%; letter-spacing: -0.03em;">
+            <span class="block">Unblock your engineers.</span>
+            <span class="block">Start in minutes.</span>
+          </h2>
 
-  <Container class="relative z-10">
-    <div class="text-center max-w-3xl mx-auto fade-in-view">
-      <!-- Heading -->
-      <h2 class="text-white mb-6">
-        Unblock your engineers.<br />Start in minutes.
-      </h2>
+          <!-- Subtitle -->
+          <p class="text-white/80 text-[24px] mb-8 font-cleric-sans">
+            Setup takes minutes. Read-only by default.
+          </p>
 
-      <!-- Subtitle -->
-      <p class="subtitle text-gray-300 mb-10 max-w-2xl mx-auto">
-        Setup takes minutes. Results hit by default.
-      </p>
-
-      <!-- CTA Buttons -->
-      <div class="flex flex-col tablet:flex-row items-center justify-center gap-4">
-        <Button
-          variant="primary"
-          size="lg"
-          onclick="window.openTryItOutModal()"
-        >
-          Start for free
-        </Button>
-        <Button
-          variant="outline"
-          size="lg"
-          href="#demo"
-          class="border-white text-white hover:bg-white hover:text-dark"
-        >
-          Request Demo
-        </Button>
+          <!-- CTA Buttons -->
+          <div class="flex flex-col tablet:flex-row gap-3">
+            <button
+              onclick="window.openTryItOutModal()"
+              class="px-6 py-3 bg-white text-dark font-medium rounded-full hover:bg-gray-100 transition-colors"
+            >
+              Start for free
+            </button>
+            <a
+              href="#demo"
+              class="px-6 py-3 border border-white text-white font-medium rounded-full hover:bg-white/10 transition-colors text-center"
+            >
+              Request Demo
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </Container>

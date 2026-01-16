@@ -1,60 +1,169 @@
 ---
 import Container from '../ui/Container.astro';
-import Badge from '../ui/Badge.astro';
-
-// Integration logos represented as simple icons/placeholders
-const integrations = [
-  { name: 'Datadog', color: '#632CA6' },
-  { name: 'PagerDuty', color: '#06AC38' },
-  { name: 'Opsgenie', color: '#0052CC' },
-  { name: 'Slack', color: '#4A154B' },
-  { name: 'Jira', color: '#0052CC' },
-  { name: 'GitHub', color: '#181717' },
-  { name: 'AWS', color: '#FF9900' },
-  { name: 'GCP', color: '#4285F4' },
-  { name: 'Kubernetes', color: '#326CE5' },
-  { name: 'Grafana', color: '#F46800' },
-];
 ---
 
-<section class="section-padding bg-light">
+<section class="section-padding bg-white">
   <Container>
     <!-- Header -->
-    <div class="text-center max-w-3xl mx-auto mb-12 fade-in-view">
-      <Badge variant="default" class="mb-4">INTEGRATIONS</Badge>
+    <div class="text-center max-w-4xl mx-auto mb-12 tablet:mb-16 fade-in-view">
+      <!-- Badge -->
+      <span class="inline-block px-3 py-1 mb-6 text-sm text-body bg-[#EAEAEA] rounded">
+        Integrations
+      </span>
+
       <h2 class="mb-4">Built to plug right into your stack</h2>
-      <p class="subtitle text-body">
-        Connect your alerting, incident, and metrics tools to get value on day one.
+
+      <p class="subtitle text-[#6B6B6B] max-w-2xl mx-auto">
+        Connect your whole stack in an afternoon. Read access by default, write access when you're ready.
       </p>
     </div>
 
     <!-- Logo Grid -->
-    <div class="fade-in-view" style="animation-delay: 0.1s;">
-      <div class="flex flex-wrap justify-center items-center gap-6 tablet:gap-8">
-        {integrations.map((integration) => (
-          <div
-            class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-white rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div
-              class="w-8 h-8 tablet:w-10 tablet:h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs"
-              style={`background-color: ${integration.color}`}
-            >
-              {integration.name.charAt(0)}
-            </div>
-          </div>
-        ))}
+    <div class="fade-in-view max-w-4xl mx-auto" style="animation-delay: 0.1s;">
+      <!-- Row 1 - 8 icons -->
+      <div class="flex flex-wrap justify-center items-center gap-4 tablet:gap-5 mb-4 tablet:mb-5">
+        <!-- Kubernetes -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <path d="M16 2L3 9.5v13L16 30l13-7.5v-13L16 2z" fill="#326CE5"/>
+            <path d="M16 7l-7 4v8l7 4 7-4v-8l-7-4z" fill="#fff"/>
+            <circle cx="16" cy="15" r="2" fill="#326CE5"/>
+          </svg>
+        </div>
+
+        <!-- Notion -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <rect x="6" y="4" width="20" height="24" rx="2" stroke="#000" stroke-width="2" fill="none"/>
+            <path d="M11 10h6M11 14h10M11 18h8" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Honeycomb/Hive -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <path d="M16 4l10 6v12l-10 6-10-6V10l10-6z" fill="#F7B500"/>
+            <path d="M16 10l5 3v6l-5 3-5-3v-6l5-3z" fill="#fff"/>
+          </svg>
+        </div>
+
+        <!-- Swarm/Slack dots -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <circle cx="10" cy="10" r="3" fill="#E8A123"/>
+            <circle cx="22" cy="10" r="3" fill="#E8A123"/>
+            <circle cx="10" cy="22" r="3" fill="#E8A123"/>
+            <circle cx="22" cy="22" r="3" fill="#E8A123"/>
+            <circle cx="16" cy="16" r="3" fill="#E8A123"/>
+          </svg>
+        </div>
+
+        <!-- Vercel/Y shape -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <path d="M8 8l8 10v8M24 8l-8 10" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Figma -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <circle cx="11" cy="8" r="4" fill="#F24E1E"/>
+            <circle cx="21" cy="8" r="4" fill="#FF7262"/>
+            <circle cx="11" cy="16" r="4" fill="#A259FF"/>
+            <circle cx="21" cy="16" r="4" fill="#1ABCFE"/>
+            <circle cx="11" cy="24" r="4" fill="#0ACF83"/>
+          </svg>
+        </div>
+
+        <!-- Mint/Green app -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <rect x="6" y="6" width="20" height="20" rx="4" fill="#10B981"/>
+            <path d="M12 16h8M16 12v8" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- GitHub -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16 4C9.373 4 4 9.373 4 16c0 5.302 3.438 9.8 8.205 11.387.6.11.82-.26.82-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.492.998.108-.776.42-1.305.763-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.468-2.382 1.236-3.222-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23A11.51 11.51 0 0116 9.805c1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.912 1.235 3.222 0 4.61-2.807 5.624-5.48 5.921.432.372.816 1.103.816 2.222v3.293c0 .32.218.694.825.576C24.565 25.797 28 21.3 28 16c0-6.627-5.373-12-12-12z" fill="#181717"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Row 2 - 7 icons, offset for zigzag effect -->
+      <div class="flex flex-wrap justify-center items-center gap-4 tablet:gap-5 tablet:px-12">
+        <!-- GitLab -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <path d="M16 28L4 18l3-10 3 10h12l3-10 3 10-12 10z" fill="#E24329"/>
+            <path d="M16 28L7 18h18L16 28z" fill="#FC6D26"/>
+            <path d="M7 18L4 18l3-10 3 10H7z" fill="#FCA326"/>
+            <path d="M25 18l3 0-3-10-3 10h3z" fill="#FCA326"/>
+          </svg>
+        </div>
+
+        <!-- Grafana -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="10" stroke="#F46800" stroke-width="3" fill="none"/>
+            <path d="M16 10c3.314 0 6 2.686 6 6" stroke="#F46800" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Sentry -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <path d="M16 6C10 6 6 12 6 16c0 6 4 10 10 10" stroke="#F46800" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <circle cx="22" cy="22" r="4" fill="#F46800"/>
+          </svg>
+        </div>
+
+        <!-- Atlassian -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <path d="M10 22L6 28h8l4-10-4-2-4 6z" fill="#2684FF"/>
+            <path d="M22 22l4 6h-8l-4-10 4-2 4 6z" fill="#2684FF"/>
+            <path d="M16 4l6 14h-12L16 4z" fill="#2684FF"/>
+          </svg>
+        </div>
+
+        <!-- Jira -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <path d="M16 4l12 12-12 12L4 16l12-12z" fill="#2684FF"/>
+            <path d="M16 10l6 6-6 6-6-6 6-6z" fill="#fff"/>
+          </svg>
+        </div>
+
+        <!-- Alchemy/Purple -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <rect x="4" y="4" width="24" height="24" rx="4" fill="#8B5CF6" fill-opacity="0.1"/>
+            <path d="M10 22L16 10l6 12H10z" stroke="#8B5CF6" stroke-width="2" fill="none"/>
+            <circle cx="16" cy="18" r="2" fill="#8B5CF6"/>
+          </svg>
+        </div>
+
+        <!-- Google Cloud -->
+        <div class="flex items-center justify-center w-16 h-16 tablet:w-20 tablet:h-20 bg-[#F5F5F5] rounded-xl">
+          <svg class="w-8 h-8 tablet:w-10 tablet:h-10" viewBox="0 0 32 32" fill="none">
+            <path d="M16 8a8 8 0 100 16 8 8 0 000-16z" fill="#4285F4"/>
+            <path d="M16 8a8 8 0 00-8 8h4a4 4 0 014-4V8z" fill="#EA4335"/>
+            <path d="M8 16a8 8 0 008 8v-4a4 4 0 01-4-4H8z" fill="#FBBC05"/>
+            <path d="M16 24a8 8 0 008-8h-4a4 4 0 01-4 4v4z" fill="#34A853"/>
+          </svg>
+        </div>
       </div>
     </div>
 
-    <!-- Additional Info -->
+    <!-- Bottom Link -->
     <div class="mt-12 text-center fade-in-view" style="animation-delay: 0.2s;">
-      <p class="text-muted mb-4">Don't see a tool you need?</p>
-      <a href="#integrations" class="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-medium transition-colors">
-        Request an integration
-        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
+      <p class="text-body font-cleric-sans text-[16px]">
+        See if Cleric is a fit <a href="#integrations" class="underline hover:text-dark transition-colors">for your stack</a>
+        <span class="inline-block ml-0.5">↗</span>
+      </p>
     </div>
   </Container>
 </section>
